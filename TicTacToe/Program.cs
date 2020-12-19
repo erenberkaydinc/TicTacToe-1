@@ -9,12 +9,11 @@ namespace TicTacToe
 
             string[] fieldStates = new string[9];
 
-
+            // Game Start
             Console.WriteLine("Welcome to tic-tac-toe!");
 
             Console.WriteLine("What’s the state of the first field: ");
             fieldStates[0] = Console.ReadLine();
-
             Console.WriteLine("What’s the state of the second field: ");
             fieldStates[1] = Console.ReadLine();
             Console.WriteLine("What’s the state of the third field: ");
@@ -31,7 +30,9 @@ namespace TicTacToe
             fieldStates[7] = Console.ReadLine();
             Console.WriteLine("What’s the state of the nineth field: ");
             fieldStates[8] = Console.ReadLine();
-
+            
+            
+            // Output
             Console.WriteLine();
             Console.WriteLine($" {fieldStates[0]} | {fieldStates[1]} | {fieldStates[2]}");
             Console.WriteLine("---+---+---");
