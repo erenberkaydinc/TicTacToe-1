@@ -1,57 +1,92 @@
-﻿using System;
+using System;
 
 namespace TicTacToe
 {
     class Program
     {
+        static int rounds = 9;
+        static int prefer; 
+
+        static char[] section = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+
         static void Main(string[] args)
         {
 
-            string[] fieldStates = new string[9];
+            int player = 1;
 
-            // Game Start
-            Console.WriteLine("Welcome to tic-tac-toe!");
+            do
+            {
+                Console.Clear();
 
-            Console.WriteLine("What’s the state of the first field: ");
-            fieldStates[0] = Console.ReadLine();
-            Console.WriteLine("What’s the state of the second field: ");
-            fieldStates[1] = Console.ReadLine();
-            Console.WriteLine("What’s the state of the third field: ");
-            fieldStates[2] = Console.ReadLine();
-            Console.WriteLine("What’s the state of the fourth field: ");
-            fieldStates[3] = Console.ReadLine();
-            Console.WriteLine("What’s the state of the fifth field: ");
-            fieldStates[4] = Console.ReadLine();
-            Console.WriteLine("What’s the state of the sixth field: ");
-            fieldStates[5] = Console.ReadLine();
-            Console.WriteLine("What’s the state of the seventh field: ");
-            fieldStates[6] = Console.ReadLine();
-            Console.WriteLine("What’s the state of the eighth field: ");
-            fieldStates[7] = Console.ReadLine();
-            Console.WriteLine("What’s the state of the nineth field: ");
-            fieldStates[8] = Console.ReadLine();
-            
-            
-            // Output
+                Console.WriteLine("PLAYER 1 IS X , PLAYER 2 IS O ");
+                Console.WriteLine("\n");
+                rounds--;
+
+                
+                if (player % 2 == 0)
+                {
+                    Console.WriteLine("player 2 chance");
+
+                }
+                else
+                {
+                    Console.WriteLine("player 1 chance ");
+                }
+                Console.Write("\n");
+
+                gameBoard();
+
+                prefer = int.Parse(Console.ReadLine());
+
+
+                if (section[prefer] != 'x' && section[prefer] != 'o')
+                {
+                    if (player % 2 == 0)
+                    {
+                        section[prefer] = 'o';
+
+                        player++;
+                    }
+                    else
+                    {
+                        section[prefer] = 'x';
+                        player++;
+                    }
+                }
+
+                else
+                {
+                    Console.WriteLine("ROW {0} is already filled with {1} ", prefer, section[prefer]);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("please wait....");
+
+                }
+
+
+                if (rounds == 0)
+                {
+
+                    Console.WriteLine("game over");
+                    break;
+                }
+
+
+            } while (rounds > 0);
+
+
+
             Console.WriteLine();
-            Console.WriteLine($" {fieldStates[0]} | {fieldStates[1]} | {fieldStates[2]}");
+            Console.ReadLine();
+        }
+        private static void gameBoard()
+        {
+
+
+            Console.WriteLine(" {0} | {1} | {2} ", section[1], section[2], section[3]);
             Console.WriteLine("---+---+---");
-            Console.WriteLine($" {fieldStates[3]} | {fieldStates[4]} | {fieldStates[5]}");
+            Console.WriteLine(" {0} | {1} | {2} ", section[4], section[5], section[6]);
             Console.WriteLine("---+---+---");
-            Console.WriteLine($" {fieldStates[6]} | {fieldStates[7]} | {fieldStates[8]}");
-            
-            Console.WriteLine();
-
-
-
-
-
-
-
-
-
-
-
+            Console.WriteLine(" {0} | {1} | {2} ", section[7], section[8], section[9]);
         }
     }
 }
