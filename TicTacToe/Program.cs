@@ -18,19 +18,19 @@ namespace TicTacToe
             {
                 Console.Clear();
 
-                Console.WriteLine("PLAYER 1 IS X , PLAYER 2 IS O ");
-                Console.WriteLine("\n");
+                Console.WriteLine("PLAYER 1 IS X , PLAYER 2 IS O \n ");
+                
                 rounds--;
 
                 
                 if (player % 2 == 0)
                 {
-                    Console.WriteLine("player 2 chance");
+                    Console.WriteLine("PLAYER 2's TURN");
 
                 }
                 else
                 {
-                    Console.WriteLine("player 1 chance ");
+                    Console.WriteLine("PLAYER 1's TURN");
                 }
                 Console.Write("\n");
 
@@ -56,8 +56,8 @@ namespace TicTacToe
 
                 else
                 {
-                    Console.WriteLine("ROW {0} is already filled with {1} ", prefer, section[prefer]);
-                    Console.WriteLine("\n");
+                    Console.WriteLine("ROW {0} is already filled with {1} \n", prefer, section[prefer]);
+                    
                     Console.WriteLine("please wait....");
 
                 }
@@ -74,14 +74,11 @@ namespace TicTacToe
             } while (rounds > 0);
 
 
-
             Console.WriteLine();
             Console.ReadLine();
         }
         private static void gameBoard()
         {
-
-
             Console.WriteLine(" {0} | {1} | {2} ", section[1], section[2], section[3]);
             Console.WriteLine("---+---+---");
             Console.WriteLine(" {0} | {1} | {2} ", section[4], section[5], section[6]);
